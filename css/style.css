@@ -144,6 +144,10 @@ body {
   font-size: 14px;
 }
 
+td {
+  color: white;
+}
+
 /* ======================== OVERLAY CONTAINER ======================== */
 .overlay {
   position: fixed;
