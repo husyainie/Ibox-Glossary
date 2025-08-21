@@ -1,14 +1,44 @@
 /* ======================== GLOBAL ======================== */
+@font-face {
+  font-family: "ArticulatCF";
+  src: url("../font/ArticulatCF-Normal.ttf") format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "ArticulatCF";
+  src: url("../font/ArticulatCF-Bold.ttf") format("truetype");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "ArticulatCF";
+  src: url("../font/ArticulatCF-Light.ttf") format("truetype");
+  font-weight: 300;
+}
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: #000; /* atau warna/gradient sesuai desain */
+  overflow-x: hidden; /* biar tidak geser samping */
+}
+
 body {
   margin: 0;
   background-image: url("../image/ibox20th-background.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "ArticulatCF", sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background-attachment: fixed; /* biar tetap nempel pas scroll */
+  max-height: 768px;
+
 }
 
 .header-bar {
@@ -63,7 +93,6 @@ body {
   width: 100%;
   height: 75vh;
   object-fit: cover;
-  margin-top: -80px;
   background-image: url("../image/bg_map.png");
   background-size: cover;
   background-repeat: no-repeat;
@@ -72,21 +101,10 @@ body {
   border-color: #fdfce3;
   margin-top: -20px;
   position: relative;
-  position: relative;
+
 }  
 
 .box_peta ::before {
-  /* width: 100%;
-  height: 75vh;
-  object-fit: cover;
-  margin-top: -80px;
-  background-image: url(/image/bg_map.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  border-radius: 30px;
-  border-style: solid;
-  border-color: #fdfce3;
-  margin-top: -20px; */
   position: absolute;
   z-index:-1;
   opacity: 0.5;
@@ -96,7 +114,6 @@ body {
   background-image: url("../image/ibox20th-background-2.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  /* height: 100%; */
   padding: 20px;
   max-width: 800px;
   border-radius: 12px;
@@ -107,8 +124,18 @@ body {
 }
 
 .peta {
-  fill: #ffffff;
+  fill: #ffffff;   /* warna default putih */
+  stroke: #000;    /* garis hitam biar kelihatan */
+  stroke-width: 0.5;
+  transition: fill 0.3s ease;
 }
+
+.peta:hover {
+  fill: rgb(167, 92, 11);      /* berubah jadi emas saat hover */
+  cursor: pointer;
+}
+
+
 
 /* ======================== TABLE (utama & overlay) ======================== */
 #dataTable {
@@ -147,7 +174,6 @@ body {
 td {
   color: white;
 }
-
 /* ======================== OVERLAY CONTAINER ======================== */
 .overlay {
   position: fixed;
